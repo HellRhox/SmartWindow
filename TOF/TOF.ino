@@ -35,7 +35,6 @@ void setup() {
   {
     showPixels(0,255,0,0);
   }
-  conCount.free();
   if(!tof.begin())
   {
     tofNotFound();
