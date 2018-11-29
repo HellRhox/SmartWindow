@@ -1,5 +1,5 @@
 #define baud 115200
-
+#define wait 3
 //Normal print methodes
 
 void print(String s)
@@ -17,7 +17,7 @@ void print(String s)
       delay(1);
     }
     Serial.print(s);
-    delay(2);
+    delay(wait);
     Serial.end();    
   }
 }
@@ -31,7 +31,7 @@ void print(int i)
       delay(1);
     }
     Serial.print(i);
-    delay(2);
+    delay(wait);
     Serial.end();    
 }
 
@@ -44,7 +44,7 @@ void print(float f)
       delay(1);
     }
     Serial.print(f);
-    delay(2);
+    delay(wait);
     Serial.end();    
 }
 
@@ -65,7 +65,7 @@ void println(String s)
       delay(1);
     }
     Serial.println(s);
-    delay(2);
+    delay(wait);
     Serial.end();
   }
 }
@@ -79,7 +79,7 @@ void println(int i)
       delay(1);
     }
     Serial.println(i);
-    delay(2);
+    delay(wait);
     Serial.end();
 }
 
@@ -92,6 +92,6 @@ void println(float f)
       delay(1);
     }
     Serial.println(f);
-    delay(2);
+    delay(wait);
     Serial.end();
 }

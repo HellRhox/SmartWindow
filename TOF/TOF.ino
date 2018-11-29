@@ -22,18 +22,21 @@ Adafruit_VL6180X tof = Adafruit_VL6180X();
 void setup() {
   int conCount=0;
   startPixels();
-  print("Connceting to Adafruit IO");
+  println("Connceting to Adafruit IO");
   io.connect();
   while(io.status()<AIO_CONNECTED && conCount<30){
     showPixels(0,0,0,255);
     print(".");
     conCount++;
-    delay(500);
-    showPixels(0,0,0,255);   
+    delay(250);
+    showPixels(0,0,0,0);
+    delay(250);   
   }
+  print("\n");
   if(conCount==30)
   {
     showPixels(0,255,0,0);
+    print(io.status());
   }
   if(!tof.begin())
   {
@@ -43,7 +46,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  print("I´m Working dammit");
+  println("I´m Working dammit");
   if(!tof.begin())
   {
     tofNotFound();
