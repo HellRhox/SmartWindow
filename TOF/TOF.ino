@@ -24,19 +24,24 @@ void setup() {
   startPixels();
   println("Connceting to Adafruit IO");
   io.connect();
-  while(io.status()<AIO_CONNECTED && conCount<30){
+  while(io.status()<AIO_CONNECTED && conCount<60){
     showPixels(0,0,0,255);
     print(".");
     conCount++;
     delay(250);
     showPixels(0,0,0,0);
-    delay(250);   
+    delay(250);
   }
   print("\n");
-  if(conCount==30)
+  println(io.statusText());
+  
+  if(io.status()==21)
+  {
+    showPixels(0,0,255,0);
+  }
+  else
   {
     showPixels(0,255,0,0);
-    print(io.status());
   }
   if(!tof.begin())
   {
