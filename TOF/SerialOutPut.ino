@@ -35,6 +35,19 @@ void print(int i)
     Serial.end();    
 }
 
+void print(unsigned int i)
+{
+    Serial.begin(baud);
+    //Wait for Serialport to open
+    while (!Serial)
+    {
+      delay(1);
+    }
+    Serial.print(i);
+    delay(wait);
+    Serial.end();    
+}
+
 void print(float f)
 {
     Serial.begin(baud);
@@ -82,7 +95,18 @@ void println(int i)
     delay(wait);
     Serial.end();
 }
-
+void println(unsigned int i)
+{
+    Serial.begin(baud);
+    //Waiting for Serailport to Open
+    while (!Serial)
+    {
+      delay(1);
+    }
+    Serial.println(i);
+    delay(wait);
+    Serial.end();
+}
 void println(float f)
 {
     Serial.begin(baud);

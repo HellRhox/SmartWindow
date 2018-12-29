@@ -43,7 +43,7 @@ void setup() {
 
 void loop() {
   io.run();
-  if (millis(>=last_feed+57)
+  if (millis()>=last_feed+57000)
   {
     digitalWrite(shutdownPin,HIGH);
     if (!tof.begin())
@@ -56,13 +56,18 @@ void loop() {
       
       if (tof.readRangeStatus()==VL6180X_ERROR_NONE)
       {
-        int i=f
+        int i=0;
+        feed=0;
+        while(millis()<=(last_feed+60000))
+        feed+=tof.readRange();
+        feed/=i;
       }
-      if (millis()>=(last_feed+60))
+      if (millis()>=(last_feed+60000))
       {
         print("sending-> ");println(feed);
         Range->save(feed);
         last_feed=millis();
+        digitalWrite(shutdownPin,LOW);
       }
     }
   }
