@@ -59,7 +59,10 @@ void loop() {
         int i=0;
         feed=0;
         while(millis()<=(last_feed+60000))
-        feed+=tof.readRange();
+        {
+          feed+=tof.readRange();
+          i++;
+        }
         feed/=i;
       }
       if (millis()>=(last_feed+60000))
