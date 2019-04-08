@@ -9,9 +9,9 @@ A try on a SmartWindow with ESP8266 using Arduino and C/C++ code.
 
 ## Needed Librarys
 
-*Adafruit IO
-*Adafruit NeoPixel
-*Adafruit VL6180x
+* Adafruit IO
+* Adafruit NeoPixel
+* Adafruit VL6180x
 
 ## Prepering the Arduino IDE
 
