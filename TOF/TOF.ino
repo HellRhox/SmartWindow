@@ -60,6 +60,7 @@ void loop() {
         feed=0;
         while(millis()<=(last_feed+60000))
         {
+          print(i);print(": ");println(tof.readRange());
           feed+=tof.readRange();
           i++;
         }
