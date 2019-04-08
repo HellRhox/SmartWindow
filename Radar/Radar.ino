@@ -13,7 +13,7 @@
 
 #define radarPin 12
 #define closed 5
-#define buzzer 8
+#define buzzer 15
 
 
 unsigned int activeTime = 6000;
@@ -29,7 +29,7 @@ void setup()
   startPixels();
   connectAIO();
   pinMode(radarPin, OUTPUT);
-  pinMode(buzzer,OUTPUT)
+  pinMode(buzzer,OUTPUT);
   digitalWrite(radarPin, LOW);
   pinMode(radarPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(radarPin), handleInterrupt, RISING);
@@ -50,6 +50,7 @@ void loop() {
       doSomething(-1);
     }
   }
+  delay(10000);
 }
 
 void getTimeInMs(AdafruitIO_Data *data)
@@ -79,15 +80,17 @@ void doSomething(int i)
   switch (i)
   {
     // case -1 is justed used for debuging purposes and should not be used in a normal case
-    case -1: println("___Debuge übersicht___");
+    case -1: 
+             buzzing();
+             println("___Debuge übersicht___");
              println("\n \n IOConnection Status:");print(io.statusText());
              println("\n \n activeTime:");print(activeTime);
              println("\n \n LastTime:");print(lastTime);
-             exit(0);
+            // exit(0);
             break;
     case 0: showPixels(1, 255, 0, 255);
             break;
-    case 1: buzzing()
+    case 1: buzzing();
             break;
     default: println("I don´t know what to do");
       break;
