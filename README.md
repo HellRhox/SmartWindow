@@ -21,3 +21,8 @@ Then go and download the ESP boardinformation in your boardmanager.
 ### Presentation
 
 The Presentation is in german and available as a pdf in the repository or on [Google](https://drive.google.com/open?id=1wG1_jem8W-T12ekoaoY51mfNZImLMe4c)
+
+
+
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com)
